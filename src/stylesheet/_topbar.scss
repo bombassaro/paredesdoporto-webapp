@@ -1,0 +1,33 @@
+.topbar {
+	@include w(calc(100% - 40px));
+	@include px(20px);
+	@include bg(#000);
+  @include fc(#FFF);
+	@include h(60px);
+	@include fx(column, center);
+	@include jc(space-between);
+  .left-icon {}
+  .title {
+    @include fw(bold)
+    @include fc(#FFF)
+    @include h(24px)
+  }
+  .right-icon {}
+  i {
+    @include fc(#FFF);
+  }
+}
+.topbar-cont {
+  @include h(60px);
+  @include mw(1024px);
+  @include w(100%);
+  @include fx(row, center);
+  @include jc(space-between);
+}
+.topbar-fixed {
+  @include w(100%);
+  @include bg(#FFF);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}

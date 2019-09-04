@@ -1,0 +1,22 @@
+.board-cont {
+  @extend %scrolly;
+  @include w(100%)
+  @include h(calc(100% - 75px))
+  @include bg(#FFFFFF)
+  @include fx(row, flex-start)
+  @include jc(center)
+  position: fixed;
+  top: 75px;
+  @media(min-width: 720px) {
+    @include h(calc(100% - 145px))
+    top: 145px;
+  }
+}
+.board-body {
+  @include w(100%)
+  @include mw(1024px)
+  @include fx(row, center)
+  @include jc(flex-start)
+  @include mb(0px);
+  flex-wrap: wrap;
+}

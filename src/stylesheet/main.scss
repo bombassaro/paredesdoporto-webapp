@@ -1,0 +1,39 @@
+@import 'base';
+@import '_board';
+@import '_bread';
+@import '_buttons';
+@import '_form';
+@import '_field';
+@import '_grid';
+@import '_menu';
+@import '_parents';
+@import '_post';
+@import '_topbar';
+@import 'loading/_loaders';
+* {
+	@include m(0px);
+	@include p(0px);
+  @include fc(#000);
+	@extend %font-primary;
+  text-decoration: none;
+}
+a {
+  cursor: pointer;
+}
+html, body {
+	@include a(100%);
+}
+#app {
+	@include a(100%);
+}
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.container-all {
+  @include w(100%);
+  @include h(calc(100% - 100px));
+}
+@media(min-width: $mq-sm) {}
+@media(min-width: $mq-md) {}

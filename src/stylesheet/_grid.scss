@@ -1,0 +1,12 @@
+.Grid {
+	@include w(calc(100% - 30px));
+	@include fx(row, flex-start);
+	@include jc(flex-start);
+	@include py(30px);
+	@include pr(30px);
+	flex-wrap: wrap;
+	.Card {
+		@media(min-width: $mq-sm) {}
+		@media(min-width: $mq-md) {}
+	}
+}

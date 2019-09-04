@@ -1,0 +1,82 @@
+%input-style {
+  @extend %font-h2;
+  @include b(1px solid $g5)
+  @include h(40px)
+  @include px(10px)
+  @include r(3px)
+  @include w(calc(100% - 22px))
+}
+.field-cont {
+  @include mt(40px)
+  @include mb(40px)
+}
+.field-labl {
+  @extend %font-h4;
+  @include fw(bold)
+  @include pb(10px)
+}
+.field-tag {
+  @extend %input-style;
+  @include bg($g8);
+  @include fx(row, center);
+  @include jc(center);
+  @include p(0px)
+  @include mb(10px)
+  @include w(100%)
+  .lef {
+    @include w(24px)
+    @include fx(row, center);
+    @include jc(center);
+    @include px(10px);
+  }
+  .cen {
+    @include w(calc(100% - 68px))
+    input {
+      @include b(none)
+      @include h(30px)
+      text-transform: uppercase
+    }
+    p {
+      @include h(100%)
+      @include pl(10px)
+      text-transform: uppercase
+    }
+  }
+  .rig {
+    @include w(24px)
+    @include fx(row, center);
+    @include jc(center);
+    @include px(10px);
+    cursor: pointer;
+  }
+  &.item {
+    @include bg($g6);
+  }
+}
+.field-buttons {
+  button {
+    @include m(0px)
+  }
+}
+.field-path {
+  @include fx(row, center);
+  @include jc(space-between);
+  @include p(0px)
+  @include mb(10px)
+  @include w(100%)
+  .rig {
+    @include w(24px)
+    @include fx(row, center);
+    @include jc(center);
+    @include px(10px);
+    cursor: pointer;
+  }
+}
+textarea,
+input {
+  @extend %input-style;
+}
+textarea {
+  @include h(100px)
+  @include py(10px)
+}

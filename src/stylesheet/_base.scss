@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree:400,400i,700');
+
+$font-primary: 'Bai Jamjuree', sans-serif;
+
+$max-width: 1260px;
+
+$mq-xs: 470px;
+$mq-sm: 660px;
+$mq-md: 900px;
+$mq-lg: 1260px;
+$mq-xl: 1680px;
+
+$mq-xs: 470px;
+$mq-sm: 660px;
+$mq-md: 900px;
+$mq-lg: 1260px;
+$mq-xl: 1680px;
+
+$p1: #CBFFD1;
+$p2: #BBF5C1;
+// gray colors
+$g1: #000000;
+$g2: #333333;
+$g3: #666666;
+$g4: #999999;
+$g5: #D7D7D7;
+$g6: #EAEAEA;
+$g7: #FAFAFA;
+$g8: #FFFFFF;
+// alert colors
+$a1: #39C357;
+$a2: #EFC63B;
+$a3: #DE0000;
+$a4: #2091EA; 
+// opacity color
+$c-o1: rgba(0,0,0,0.1);
+
+@mixin a($n) {
+	@include w($n);
+	@include h($n);
+}
+@mixin c($n) {
+	@include px(20px);
+	@include w(calc(#{$n} - 40px));
+	@media(min-width: $mq-sm) {
+		@include px(50px);
+		@include w(calc(#{$n} - 100px));
+	}
+	@media(min-width: $mq-md) {
+		@include px(100px);
+		@include w(calc(#{$n} - 200px));
+	}
+}
+@mixin w($n) { width: $n; }
+@mixin h($n) { height: $n; }
+@mixin mw($n) { max-width: $n; }
+@mixin mh($n) { max-height: $n; }
+@mixin miw($n) { min-width: $n; }
+@mixin mih($n) { min-height: $n; }
+@mixin m($n) {
+	@include mx($n);
+	@include my($n);
+}
+@mixin mx($n) {
+	@include ml($n);
+	@include mr($n);
+}
+@mixin my($n) {
+	@include mt($n);
+	@include mb($n);
+}
+@mixin mt($n) { margin-top: $n; }
+@mixin mb($n) { margin-bottom: $n; }
+@mixin ml($n) { margin-left: $n; }
+@mixin mr($n) { margin-right: $n; }
+@mixin p($n) {
+	@include px($n);
+	@include py($n);
+}
+@mixin px($n) {
+	@include pl($n);
+	@include pr($n);
+}
+@mixin py($n) {
+	@include pt($n);
+	@include pb($n);
+}
+@mixin pt($n) { padding-top: $n; }
+@mixin pb($n) { padding-bottom: $n; }
+@mixin pl($n) { padding-left: $n; }
+@mixin pr($n) { padding-right: $n; }
+
+@mixin fc($n) { color: $n; }
+@mixin ff($n) { font-family: $n; }
+@mixin fs($n) { font-size: $n; }
+@mixin ft($n) { font-style: $n; }
+@mixin fw($n) { font-weight: $n; }
+@mixin lh($n) { line-height: $n; }
+@mixin ls($n) { letter-spacing: $n; }
+@mixin bg($n) { background-color: $n; }
+@mixin td($n) { text-decoration: $n; }
+
+@mixin r($n) { border-radius: $n; }
+@mixin bc($n) { border-color: $n; }
+@mixin b($n) {
+	@include bx($n);
+	@include by($n);
+}
+@mixin bx($n) {
+	@include bl($n);
+	@include br($n);
+}
+@mixin by($n) {
+	@include bt($n);
+	@include bb($n);
+}
+@mixin bt($n) { border-top: $n; }
+@mixin bb($n) { border-bottom: $n; }
+@mixin bl($n) { border-left: $n; }
+@mixin br($n) { border-right: $n; }
+
+@mixin jc($n) { justify-content: $n; }
+
+@mixin fx($n, $c) {
+  display: flex;
+  flex-direction: $n;
+  align-items: $c;
+}
+
+%font-primary { font-family: 'Bai Jamjuree', sans-serif; }
+%scrolly { 
+	overflow-y: scroll; 
+	-webkit-overflow-scrolling: touch;
+}
+%scrollx { 
+	overflow-x: scroll; 
+	-webkit-overflow-scrolling: touch;
+}
+%strong { font-weight: bold; }
+
+%font-h1 {
+  @extend %font-primary;
+  @include fs(19px)
+  @include lh(23px)
+}
+%font-h2 {
+  @extend %font-primary;
+  @include fs(17px)
+  @include lh(21px)
+}
+%font-h3 {
+  @extend %font-primary;
+  @include fs(15px)
+  @include lh(19px)
+}
+%font-h4 {
+  @extend %font-primary;
+  @include fs(13px)
+  @include lh(17px)
+}
+%font-h5 {
+  @extend %font-primary;
+  @include fs(11px)
+  @include lh(15px)
+}
+.max-width {
+	@include w(100%);
+	@include mw($max-width);
+}

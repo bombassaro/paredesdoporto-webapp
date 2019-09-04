@@ -1,0 +1,26 @@
+.main-button {
+  @extend %font-h4;
+  @include fw(bold)
+  @include h(40px)
+  @include miw(100px)
+  @include ml(10px)
+  @include px(20px)
+  @include r(3px)
+  &.pri {
+    @include bg($a1)
+    @include fc($g8)
+  }
+  &.sec {
+    @include bg($g2)
+    @include fc($g8)
+  }
+  &.thi {
+    @include bg($g6)
+    @include fc($g4)
+  }
+  &.dis {
+    @include bg($g5)
+    @include fc($g8)
+    cursor: default
+  }
+}

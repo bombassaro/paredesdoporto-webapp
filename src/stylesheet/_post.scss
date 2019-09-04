@@ -1,0 +1,61 @@
+.post-page {
+  @include a(100%)
+  @include bg(#FFFFFF)
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  .topbar-page {
+    @include h(60px)
+    @include px(10px)
+    @include fx(row, center)
+    i {
+      cursor: pointer;
+    }
+  }
+  .post-image {
+    @include w(100%)
+    img {
+      @include w(100%)
+    }
+  }
+  .post-body {
+    @include pt(40px)
+    @include px(20px)
+    .label-title {
+      @include fw(bold)
+      @include fs(12px)
+      @include pb(4px)
+    }
+    .label-text {
+      @include fc(#666)
+      @include fs(18px)
+      @include pb(40px)
+    }
+  }
+}
+.post-card {
+  @include w(calc(calc(100% - 28px) / 3))
+  @include bg(rgba(0,0,0,0.1))
+  @include mr(14px)
+  @include mb(14px)
+  position: relative;
+  &:nth-child(3n) {
+    @include mr(0px)
+  }
+  & > a {
+    @include a(100%)
+    float: left;
+  }
+  .card-wrap {
+    @include mt(100%)
+  }
+  .card-body {
+    @include w(100%)
+    position: absolute;
+    top: 0;
+    img {
+      @include w(100%)
+    }
+  }
+}

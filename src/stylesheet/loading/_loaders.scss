@@ -1,0 +1,17 @@
+@import '_variables';
+@import '_animations';
+@import '_loader08';
+
+.loader-container {
+	@include w(100%);
+	@include h(100%);
+	@include bg(rgba(0,0,0,0.5));
+	position: absolute;
+	z-index: 1;
+	top: 0px;
+}
+.loader08 {
+  @include loader08($size: 20px, $gap: 6px, $align: middle);
+  @include mt(10px);
+	z-index: 2;
+}

@@ -1,0 +1,10 @@
+.Card {
+	@include w(260px);
+	@include h(260px);
+	@include ml(30px);
+	@include mb(30px);
+	@include r(10px);
+	@include bg(rgba(255,255,255,0.1));
+	@include fx(row, center);
+	@include jc(space-between);
+}

@@ -1,0 +1,63 @@
+.parent-modal-wrap {
+  @include a(100%)
+  @include fx(row, center);
+  @include jc(center);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.parent-modal-opac {
+  @include a(100%)
+  @include bg(rgba(0,0,0,0.8))
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.parent-modal-body {
+  $spacew: 40px;
+  $spaceh: 160px;
+  @include w(calc(100% - #{$spacew}))
+  @include h(calc(100% - #{$spaceh}))
+  @include mh(620px)
+  @include br(1px solid #990)
+  @include bg(#FFF)
+  overflow-y: hidden;
+  z-index: 3;
+  @media(min-width: 620px) {
+    @include mw(520px)
+  }
+}
+.parent-body-topper {
+  @include w(calc(100% - 60px))
+  @include px(30px)
+  @include h(60px)
+  @include fx(row, center);
+  @include jc(flex-end);
+  button {
+    @include m(0)
+    @include p(0)
+    @include w(32px)
+    @include miw(32px)
+  }
+}
+.parent-body-contnt {
+  @include w(calc(100% - 80px))
+  @include h(calc(100% - 160px))
+  @include p(10px)
+  @include mx(30px)
+  @include my(0px)
+  @include b(1px solid $g2)
+  @extend %scrolly;
+}
+.parent-body-bottom {
+  @include w(calc(100% - 60px))
+  @include mx(30px)
+  @include h(80px)
+  @include fx(row, center);
+  @include jc(space-between);
+  button {
+    @include m(0px)
+  }
+}

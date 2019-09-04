@@ -1,0 +1,215 @@
+.main-menu-wrap {
+  @include a(100%)
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  .main-menu-opac {
+    @include a(100%)
+    @include bg(rgba(0,0,0,0.8))
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  .main-menu {
+    @extend %scrolly;
+    @include mw(300px)
+    @include w(90%)
+    @include h(calc(100% - 40px))
+    @include bg(#FFF)
+    @include br(1px solid #990)
+    @include py(20px)
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    .main-menu-top {
+      @include fx(column, flex-end)
+      @include px(20px)
+    }
+    .main-menu-title {
+      @extend %font-h2;
+      @include h(55px)
+      @include my(0px)
+      @include px(30px)
+      @include fw(bold)
+      @include fx(row, center)
+      a {
+        @include pb(5px)
+        &.selected {
+          @include bb(2px solid #000)
+        }
+      }
+      .splitBar {
+        @include pb(5px)
+      }
+      &.filter-input input {
+        @extend %font-h2;
+        @include w(100%)
+        @include h(50px)
+        @include mb(20px)
+        @include px(0px)
+        @include fw(bold)
+        @include fx(row, center)
+        @include b(none)
+        @include r(0px)
+        @include bb(2px solid #000)
+        text-transform: uppercase
+      }
+    }
+    .main-menu-item,
+    .main-menu-subitem {
+      @extend %font-h3;
+      @include h(50px)
+      @include px(30px)
+      @include fx(row, center)
+      @include jc(space-between)
+      cursor: pointer;
+    }
+    .main-menu-item {
+      @include fw(bold)
+    }
+    .main-menu-line {
+      @include bb(1px solid #ccc)
+      @include pb(20px)
+      @include mx(20px)
+      @include mb(20px)
+    }
+    .bullet {
+      @include bg($g7)
+      @include w(40px)
+      @include h(32px)
+      @include r(10px)
+      @include fx(row, center)
+      @include jc(center)
+    }
+    .main-menu-item.selected,
+    .main-menu-subitem.selected {
+      @include bg($p1)
+      .bullet {
+        @include bg($p2)
+      }
+    }
+    .main-menu-group.tags {
+      .main-menu-item {
+        @include fw(normal)
+        text-transform: uppercase
+      }
+    }
+  }
+  &.right-side {
+    .main-menu {
+      left: auto;
+      right: 0;
+    } 
+  }
+}
+
+
+.dpto-item {
+  @include w(100%)
+  @include fx(column, flex-start);
+  @include jc(flex-start);
+  &.selected {
+    & > .dpto-wrap {
+      @include bg($g6)
+      @include r(20px)
+    }
+  }
+  &.visible {
+    & > .dpto-subs {
+      display: block;
+    }
+  }
+}
+.dpto-subs {
+  @include w(calc(100% - 20px))
+  @include pl(20px)
+  display: none;
+}
+.dpto-wrap {
+  @include w(calc(100% - 10px))
+  @include my(5px)
+  @include py(10px)
+  @include px(10px)
+  @include pr(0px)
+  @include fx(row, center);
+  cursor: pointer;
+}
+.dpto-wrap-left {
+  @include w(24px)
+  @include h(20px)
+  @include pr(10px)
+}
+.dpto-wrap-center {
+  @include w(calc(100% - 70px))
+  @include h(20px)
+}
+.dpto-wrap-right {
+  @include h(20px)
+}
+.dpto-item-icon {
+  text-align: center;
+  @include ml(5px)
+  i {
+    @include ml(-2px)
+    @include mt(-2px)
+  }
+}
+.dpto-newf {
+  @include r(20px)
+  @include bg($p1)
+  input {
+    @include bg($p1)
+    @include b(none)
+    @include p(2px)
+    height: 16px;
+    text-transform: uppercase;
+  }
+}
+
+.menu-body {
+  @include h(calc(100% - 82px))
+  .parent-body-contnt {
+    @include b(none)
+    @include m(0px)
+    @include mb(10px)
+    @include h(calc(100% - 130px))
+    @include w(calc(100% - 20px))
+  }
+  .parent-body-bottom {
+    @include fx(column, flex-start);
+    @include h(auto)
+    .main-button {
+      @include w(100%)
+      @include mb(10px)
+    }
+    .parent-body-wrap {
+      @include w(100%)
+      @include fx(row, flex-start);
+      @include jc(space-between);
+      .main-button {
+        @include w(calc(50% - 5px))
+        @include miw(75px)
+        @include px(10px)
+        @include mx(0px)
+      }
+      &.three {
+        .main-button {
+          @include w(auto)
+        }
+      }
+    }
+  }
+  .dpto-wrap-right {
+    @include w(24px)
+    a {
+      @include w(100%)
+    }
+    i {
+      @include fs(18px)
+      @include mt(1px)
+    }
+  }
+}

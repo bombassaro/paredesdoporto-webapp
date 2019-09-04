@@ -1,0 +1,125 @@
+.form-wrap {
+  @include a(100%)
+  @include bg($g7)
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+.form-topb {
+  @include w(calc(100% - 40px));
+  @include px(20px);
+  @include h(60px)
+  @include fx(column, center);
+  @include jc(space-between);
+  @include fc(#FFF);
+}
+.form-body {
+  @include a(100%)
+  @extend %scrolly;
+}
+.form-body-wrap {
+  @include h(calc(100% - 100px))
+}
+.form-pict {
+  @include w(100%)
+}
+.form-link {
+  @include w(calc(100% - 40px))
+  @include px(20px)
+  @include mw(720px)
+}
+.form-cont {
+  @include w(calc(100% - 40px))
+  @include px(20px)
+  @include mx(0px)
+  @include mt(40px)
+  @extend %scrolly;
+}
+
+.form-view-cont {
+  @include mt(0px)
+  @include mb(40px)
+  @include fx(column, flex-start);
+  @include jc(flex-start);
+}
+.form-view-group {
+  @include mt(40px)
+}
+.form-view-labl {
+  @extend %font-h4;
+  @include fw(bold)
+  @include pb(10px)
+}
+.form-view-vlue {
+  @extend %font-h2;
+  @include pb(10px)
+  word-break: break-all;
+}
+.form-view-tag {
+  @extend %font-h3;
+  @include pb(10px)
+  word-break: break-all; 
+  text-transform: uppercase;
+}
+
+.floatter-button {
+  @include fx(column, center);
+  @include jc(center);
+  @include a(60px)
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  button {
+    @include a(60px)
+    @include r(30px)
+    @include bg($g1)
+    i {
+      @include fc($g8)
+      @include pt(2px)
+    }
+  }
+  @media(min-width: 1280px) {
+    right: calc(calc(100% - 1160px) / 2);
+  }
+}
+
+@media(min-width: 720px) {
+  .form-wrap {
+    @include h(100%)
+  }
+  .form-body {
+    @include h(100%)
+    @include fx(row, flex-start)
+    @include jc(center)
+    flex-wrap: wrap;
+  }
+  .form-body-wrap {
+    @include w(100%)
+    @include fx(row, flex-start)
+    @include jc(center)
+    @include mw(1024px)
+    @include px(20px)
+  }
+  .form-pict {
+    @include w(calc(100% / 2))
+    @include mt(40px)
+  }
+  .form-link {
+    @include w(100%)
+  }
+  .form-cont {
+    @include w(calc(calc(100% / 2) - 100px))
+    @include pl(80px)
+    @include pr(20px)
+    @include pb(20px)
+    @include mt(0px)
+    @include mb(20px)
+    @include h(calc(100% - 40px))
+  }
+  .form-view-cont {
+    @include w(calc(calc(100% / 2) - 80px))
+    @include pl(80px)
+    @include mt(00px)
+  }
+}

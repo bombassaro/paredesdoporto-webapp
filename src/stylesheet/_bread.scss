@@ -1,0 +1,95 @@
+.breadcrumb {
+  @include bg($g7)
+  @include w(calc(100% - 60px));
+  // @include w(100%);
+  // @include h(60px);
+  @include h(35px);
+  @include px(30px);
+  @include pt(20px);
+  @include pb(15px);
+  @include fx(row, flex-start);
+  @include jc(center);
+  display: none;
+  @media(min-width: 720px) {
+    display: flex;
+  }
+  .bread-cont {
+    @include w(100%);
+    @include mw(1024px);
+    overflow-x: hidden;
+  }
+  .items {
+    // @include w(calc(100% - 48px))
+    // flex-wrap: nowrap;
+    display: inline-flex;
+    white-space: nowrap;
+  }
+  .item {
+    float: left;
+    @extend %font-h4;
+    @include fw(bold)
+    @include r(20px)
+    @include py(5px)
+    @include px(20px)
+    @include mr(6px)
+    @include mb(6px)
+    text-transform: uppercase;
+    &.dpto {
+      display: none;
+      @include b(1px solid $g6)
+      a {
+        @include fc($g1)
+      }
+    }
+    &.tag {
+      @include b(1px solid $g6)
+    }
+    &.tag.selected {
+      @include bg($g4)
+      a {
+        @include fc($g8)
+      }
+    }
+    &.selected {
+      display: inline-flex;
+      @include bg($g2)
+      a {
+        @include fc($g8)
+      }
+    }
+    &.current {
+      display: inline-flex;
+      @include bg($g2)
+      a {
+        @include fc($g8)
+      }
+    }
+    &.visible {
+      display: inline-flex;
+    }
+  }
+  .item-dpto-subs.selected > .item.dpto.current {
+    @include bg($g3)
+  }
+  .item-dpto-subs.selected,
+  .item-dpto-subs.current {
+    display: inline-flex;
+  }
+  .item-dpto-subs.current > .item.dpto {
+    display: inline-flex;
+  }
+  .item-right {
+    @include w(48px)
+    @include fx(row, flex-end);
+    @include jc(flex-end);
+    .item-search {
+      @include w(48px)
+      @include h(48px)
+      @include r(24px)
+      @include bg($g8)
+      @include b(1px solid $g6)
+      @include fx(row, center);
+      @include jc(center);
+    }
+  }
+}
